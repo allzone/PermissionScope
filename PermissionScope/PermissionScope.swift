@@ -740,7 +740,7 @@ typealias resultsForConfigClosure     = ([PermissionResult]) -> Void
     public func statusPhotos() -> PermissionStatus {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
-        case .authorized:
+        case .authorized, .limited:
             return .authorized
         case .denied, .restricted:
             return .unauthorized
